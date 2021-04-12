@@ -1,0 +1,56 @@
+.SearchBar {
+    width: fit-content;
+    position: relative;
+    margin: .15em;
+  }
+  
+  .SearchBar:after {
+    content: "";
+    background: #fff;
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 40px;
+    right: 2px;
+    transform: rotate(135deg);
+    box-shadow: 1px 0 var(--red);
+  }
+  .SearchBar > input {
+    color: #fff;
+    font-size: 16px;
+    background: transparent;
+    width: 3.2em;
+    height: 3.2em;
+    padding-left: 1.5em;
+    border: solid 3px;
+    outline: none;
+    border-radius: 35px;
+    box-shadow: 0 1px var(--red);
+    transition: width 0.5s;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .SearchBar > input::placeholder {
+    color: #efefef;
+    opacity: 1;
+  }
+  
+  .SearchBar > input::-ms-placeholder {
+    color: #efefef;
+  }
+  
+  .SearchBar > input::-ms-input-placeholder {
+    color: #efefef;
+  }
+  
+  .SearchBar > input:focus,
+  .SearchBar > input:valid {
+    width: 250px;
+  }
+
+  @media only screen and (max-width: 790px) {
+    .SearchBar {
+      align-self: flex-start;
+      margin-bottom: .5em;
+    }
+  }

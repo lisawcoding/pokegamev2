@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+:root{
+  --red: #fe5350;
+  --yellow: rgb(254, 202, 27);
+  --black: #14171c;
+  --lightbg: rgba(0, 0, 0, 0.1)
+}
+// :root {
+//   $red: #fe5350;
+//   $yellow: rgb(254, 202, 27);
+//   $black: #14171c;
+//   $lightbg: rgba(0, 0, 0, 0.1);
+// }
+.GameApp {
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px dotted hotpink;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+.bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-attachment: fixed;
+  img {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+}
+li {
+  list-style: none;
+  padding: 1em 1.5em;
+  font-size: 1.2em;
+}
+
+/* custom scrollbar^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px ; 
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1)
+}
+::-webkit-scrollbar-thumb {
+  background: var(--yellow); 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red); 
+}
+.block {
+  display: block !important;
+}
+
+/* loader^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+.loader-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid var(--red);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* loader^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+
+
+
+.startBtn {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0.6em;
+  cursor: pointer;
+  align-self: center;
+  line-height: 1;
+  padding: 1.2em 2.2em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-color: var(--red);
+  color: #fff;
+  box-shadow: 0 0 40px 40px var(--red) inset, 0 0 0 0 var(--red);
+  transition: all 350ms ease-in-out;
+  animation: shine .5s infinite;
+  display: flex;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  font-size: 2em;
+}
+.startBtn:hover,
+.startBtn:focus {
+  outline: 0;
+}
+.startBtn:hover {
+  box-shadow: 0 0 10px 0 var(--red) inset, 0 0 10px 4px var(--red);
+  color: var(--red) !important;
+}
+@keyframes shine {
+  form {}
+  to {
+    box-shadow: 0 0 10px 0 var(--red) inset, 0 0 10px 4px var(--red);
+    color: var(--red) !important;
+  }
+}
+.teamDiv {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.teamDiv img {
+  width: 60px;
+}
+.teamDiv .startBtn {
+  margin: 0 1rem 0 0;
+}
+.teamDiv h2, .teamDiv p {
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+.text-shadow {
+  color: var(--red);
+  text-shadow: 1px 1px 2px black, 0 0 25px var(--yellow), 0 0 5px var(--yellow);
+  text-align: center;
+  letter-spacing: 5px;
+  color: var(--red);
+  animation: textshine .5s infinite;
+  margin-bottom: 1.5em;
+  font-size: 37px;
+}
+@keyframes textshine {
+  form {}
+  to {
+    text-shadow: 1px 1px 2px var(--yellow), 0 0 25px #fff, 0 0 5px #fff;
+  }
+}
+
+
+.replayBtn {
+  background: var(--red);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+    i {
+      font-size: 2.2em;
+      font-weight: 900;
+      color: #fff;
+      animation: spin 2s linear;
+  }
+  &:hover {
+    background: var(--yellow);
+    outline: none;
+  }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.rotate-div {
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  display: none;
+}
+
+@media (orientation: portrait){
+  .bg {
+    z-index: 999;
+    img, .rotate-div {
+      display: block;
+    }
+  } 
+}
+
+
+
+.small-btn {
+  text-shadow: 1px 1px pink, -1px -1px maroon;
+  font-size: 22pt;
+  width: 1.5em;
+  border-radius: .75em;
+  background-color: var(--red);
+  -o-box-shadow: 0 .2em maroon;
+  box-shadow: 0 0.2em maroon;
+  color: var(--red);
+  background-color: var(--red);
+  background-image: linear-gradient(left top, pink 3%, var(--red) 22%, maroon 99%);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0 .5rem;
+}
+.index-btn{
+  text-align: center;
+  font-weight: bold;
+  padding: 37px;
+  background-color: var(--yellow);
+  text-shadow: -1px -1px black, 1px 1px white;
+  color: gray;
+  border-radius: 7px;
+  box-shadow: 0 0.2em grey;
+  cursor: pointer;
+  background: lightgrey;
+  display: flex;
+  justify-content: center;
+}
+.small-btn:active, .index-btn:active {
+    box-shadow: none;
+    position: relative;
+    top: .2em;
+}
+
+
