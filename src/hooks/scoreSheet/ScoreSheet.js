@@ -1,11 +1,11 @@
 import React, { useContext} from 'react';
-import uuid from 'uuid';
+import {v4 as uuid4} from 'uuid';
 
-import {ScoreContext} from '../contexts/ScoreContext';
+import {ScoreContext} from '../../contexts/ScoreContext';
 import Score_round from './Score_round'
-import '../styles/ScoreSheet.scss';
+import '../../styles/ScoreSheet.scss';
 
-function ScoreSheet(props){
+function ScoreSheet(){
     const { scores } = useContext(ScoreContext);
 
     return(
@@ -32,7 +32,7 @@ function ScoreSheet(props){
                                         yourScore={score.yourScore}
                                         dealerScore={score.dealerScore}
                                         win={score.isWinner}
-                                        key={uuid()}
+                                        key={uuid4()}
                                         round={index+1}
                                         date={score.date}
                                     />

@@ -1,0 +1,137 @@
+.Fight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    justify-content: space-around;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // background-color: peachpuff;
+    .team {
+        // display: flex;
+        width: 100%;
+        // flex-grow: 1;
+        // display: revert;
+        // align-items: center;
+    }
+    .img-wrapper {
+        // padding-top: unset;
+        img {
+            width: 150%;
+        }
+    }
+    .TeamDiv {
+        width: 100%;
+        display: flex;
+    }
+    .yourTeam {
+        // background: tomato;
+    }
+    .dealerTeam {
+        // background: green;
+    }
+    li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
+.yourTeam {
+    color: var(--red);
+    // * {
+    //     color: var(--red)
+    // }
+    .filterStyle {
+        background: var(--red);
+        width: 0;
+        transition: 5s;
+        float: right;
+    }
+} 
+
+.dealerTeam {
+    color: var(--yellow);
+    .filterStyle {
+        background-color: var(--yellow);
+        width: 0;
+        transition: 5s;
+    }
+} 
+
+.score-div, .overlay {
+    display: flex;
+    font-size: 2.5em;
+    color: grey;
+    flex-shrink: 0;
+    // font-size: 200%;
+    span {
+        color: grey;
+    }
+}
+
+.win{
+    // -webkit-text-stroke: 1px var(--red);
+    animation: text .9s infinite ease-in-out;
+    text-transform: uppercase;
+}
+  
+.each-poke {
+    // border: 1px solid violet;
+    display: flex;
+    
+}
+
+.overlay {
+    content: '';
+    -webkit-animation: showup 1.6s;
+    animation: showup 1.6s;
+    background: hsla(0,0%,100%,.15);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+
+.notransition {
+    animation-name: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }
+
+// .score-div, .overlay h1 {
+//     border: 1px solid gold;
+//     height: 20%;
+//     display: flex;
+//     align-items: center;
+// }
+
+
+.replayBtn {
+    background: #fe5350;
+    background: var(--red);
+    border-radius: 50%;
+    width: 6vw;
+    height: 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.team {
+    text-align: center;
+    &.dealer {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

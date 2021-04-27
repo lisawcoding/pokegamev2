@@ -10,7 +10,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 900px;
-
+    h1 {
+      color: var(--yellow)
+    }
     *{
       font-size: 37pt;
       text-transform: uppercase;
@@ -25,10 +27,15 @@
       a {
           text-decoration: none;
           margin-bottom: 1.1em;
+          position: relative;
         }
     }
     .small-btn-div {
       display: flex;
     }
   }
- 
+
+  iframe {
+    width: 0;
+    height: 0;
+  }

@@ -1,0 +1,77 @@
+.play-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card-div-wrapper {
+    position: relative;
+  }
+  .title-div {
+    .icon-wrapper {
+      position: relative;
+      height: 100%;
+    }
+    img[src*="ball"] {
+        margin-right: .5em;
+        animation: showup .9s infinite ease-in-out;
+    }
+    h1 {
+      color: var(--yellow);
+      -webkit-text-stroke: 1px var(--red);
+    }    
+  }
+
+  .team-zone {
+    display: flex;
+    justify-content: space-between;
+    .TeamDiv {
+      width: 37%;
+      height: 5em;
+      display: flex;
+      flex-direction: row;
+      margin: 1em;
+      .img-wrapper {
+        width: 30%;
+        padding: 0;
+        position: relative;
+        background: transparent;  
+      }
+    }
+    .ball-div {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+.pokesDiv {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  .Card {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    cursor: pointer;
+    .flip-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+    }
+    * {
+      font-size: 12px;
+    }
+    .name {
+      position: absolute;
+      bottom: 1em;
+    }
+  }
+  .img-wrapper {
+    padding-top: 65% !important;
+  }
+} 

@@ -1,14 +1,13 @@
 import React from 'react';
-import uuid from 'uuid';
+import {v4 as uuid4} from 'uuid';
 
 function ScoreDetailFormate({team, title, score}) {
-    console.log(team)
     return (
         <div className='members'>
             <h1>{title}</h1>
             <h1>{`total score: ${score}`}</h1>
             {team.map(t=>
-                <div key={uuid()} className='member'>
+                <div key={uuid4()} className='member'>
                     <img src={t.src} alt={t.src} />
                     <img src={t.src_back} alt={t.src} />
                     <div className='info-div'>

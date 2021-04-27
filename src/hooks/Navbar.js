@@ -1,66 +1,80 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     BrowserRouter as Router,
     NavLink,
     withRouter
 } from "react-router-dom";
 
-import SearchBar from './SearchBar';
+import Hand from './Hand';
+import fullscreen from '../images/fullscreen.svg'
+import home from '../images/home.png'
+import play from '../images/play.png'
+import score from '../images/score.png'
+
 import '../styles/Navbar.scss';
+import { TeamContext } from '../contexts/TeamContext';
+import { InitValueContext } from '../contexts/InitValueContext';
+import { PokeListContext } from '../contexts/PokelistContext';
 
 function Navbar (props){
+    const {
+        selectedIDs, setSelectedIDs,
+        teams, setTeams,
+        isYourTerm, setIsYourTerm,
+        fighting, setFighting,
+        winner, setWinner
+    } = useContext(TeamContext)
+
+    const {
+        perPokes, setPerPokes,
+        apiUrl,
+    } = useContext(InitValueContext)
+
+    const {
+        curUrl, setCurUrl,
+    } = useContext(PokeListContext)
+
+
+    const replay=()=>{
+        if(winner==="") return
+        setCurUrl(`${apiUrl}${perPokes}`)
+        setSelectedIDs([])
+        setTeams({
+            yourTeam:[],
+            dealerTeam:[]
+        })
+        setIsYourTerm(true)
+        setFighting(false)
+        setWinner("")
+    }
 
     return (
         <>
-        { props.location.pathname!=='/' &&
+        { props.location.pathname!=='/' && (selectedIDs.length<1 | winner.length>0) &&
             <nav id='nav'>
-                {props.location.pathname==='/pokeplay' ? <SearchBar/> : <div></div>}
+                <div></div>
                 <ul ref={props.fullscreenModal}>
-                    <button className='btn btn-animate tooltip fullscreenBtn' onClick={props.openFullscreen} >[]
+                    <button className='btn btn-animate tooltip fullscreenBtn' onClick={props.openFullscreen} >
+                        <img src={fullscreen} alt="full screen" />
                         <span className="tooltiptext">full screen</span>
                     </button>
-                    <NavLink exact className='btn btn-white btn-animate tooltip' activeClassName='active-link' to='/' data-lan='tab'>
-                        <i className="fas fa-home"></i><span className="tooltiptext">home</span>
-                        </NavLink>
-                    <NavLink exact className='btn btn-white btn-animate tooltip' activeClassName='active-link' to='/pokeplay' data-lan='tab'>
-                        <i className="fas fa-play"></i><span className="tooltiptext">play game</span>
-                        </NavLink>
-                    <NavLink exact className='btn btn-white btn-animate tooltip scorelink' activeClassName='active-link' to='/scoresheet' data-lan='tab'>
-                        <i className="fas fa-clipboard"></i><span className="tooltiptext">score sheet</span>
-                        </NavLink>
+                        <li>
+                            <NavLink exact className='btn btn-white btn-animate tooltip' activeClassName='active-link' to='/'>
+                                <img src={home} alt="home-icon" /><span className="tooltiptext">home</span>
+                                </NavLink>
+                            <NavLink exact className='btn btn-white btn-animate tooltip play-btn' activeClassName='active-link' to='/play' onClick={replay}>
+                                <img src={play} alt="play-icon" />
+                                { winner === "" ? <span className="tooltiptext">play game</span> : <Hand remark="play again" />}
+                                </NavLink>
+                            <NavLink exact className='btn btn-white btn-animate tooltip scorelink' activeClassName='active-link' to='/scoresheet'>
+                                <img src={score} alt="score-icon"/><span className="tooltiptext">score sheet</span>
+                                </NavLink>    
+                        </li>
                 </ul>  
             </nav>         
         }
         </>
-       
-
-
-
-
     )
 }
   
 export default withRouter(Navbar);
-
-
-        // <Router>
-        //     <nav>
-        //     <p>google anytics, audio effect, resume photo automatic slider, https://www.pinterest.com/pin/377950593698690280/</p>
-        //     <ul className='drop-down' onClick={dropDown}>
-        //         <NavLink exact activeClassName='active-link' to='/' data-lan='tab'>Home</NavLink>
-        //         <NavLink exact activeClassName='active-link' to='/pokeplay' data-lan='tab'>Play</NavLink>
-        //         <NavLink exact activeClassName='active-link' to='/scoresheet' data-lan='tab'>Score</NavLink>
-        //     </ul>
-
-        //     <li className='hamburger' onClick={dropDown}><span></span><span></span><span></span></li>
-        //         <ul className='language-div'>
-        //             <li data-lan='en' onClick={changeLanguage} className={language === 'en' ? 'active-link' : ''}>en</li>
-        //             <li data-lan='zh' onClick={changeLanguage} className={language === 'zh' ? 'active-link' : ''}>zh</li>
-        //         </ul>  
-        //         </nav>
-        //     <Switch>
-        //         <Route exact path='/'><Home/></Route>
-        //         <Route exact path='/pokeplay' component={PokePlay}/>
-        //         <Route exact path='/scoresheet'><ScoreSheet/></Route>
-        //     </Switch>                 
-        // </Router>

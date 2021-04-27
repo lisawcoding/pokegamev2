@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
     BrowserRouter as Router,
     Route,
@@ -7,26 +7,22 @@ import {
 
 import Navbar from './Navbar';
 import Home from './Home';
-import PokePlay from './PokePlay';
-import ScoreSheet from './ScoreSheet';
-import ScoreDetail from './ScoreDetail';
+// import PokePlay from './PokePlay';
+import ScoreSheet from './scoreSheet/ScoreSheet';
+import ScoreDetail from './scoreSheet/ScoreDetail';
 import BG from './BG';
+import {InitValueContext} from '../contexts/InitValueContext'
 
-import { PokeListContext } from '../contexts/PokelistContext';
-// import { openFullscreen } from '../functions/fullScreen'
+import Play from './play/Play';
 
 function GameApp(props) {
-    const {
-       loading 
-      } = useContext(PokeListContext);
-    // const {
-    //   openFullscreen
-    // } = useContext(openFullscreen)
+  const {
+    loading,
+  } = useContext(InitValueContext)
 
-    if(loading) return <div className='loader-wrapper'><div className='loader'></div></div>;
-
+  console.log('function')
     function openFullscreen() {
-      const elem = document.querySelector(".GameApp");
+      const elem = document.querySelector("#root");
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       } else if (elem.mozRequestFullScreen) { /* Firefox */
@@ -36,26 +32,30 @@ function GameApp(props) {
       } else if (elem.msRequestFullscreen) { /* IE/Edge */
         elem.msRequestFullscreen();
       }
-      console.log('openfullscreen')
     }
-   
+
     return(
-        <div className="GameApp" >
+      <>
+      { 
+        loading ? <div className='loader-wrapper'><div className='loader'></div></div> :
+        <div className="GameApp">
           <Router>
             <BG openFullscreen={openFullscreen}/>
             <Navbar openFullscreen={openFullscreen}/>
             <Switch>
-                {/* <Route exact path='/' component={routeProps=><Home stuff={routeProps} openFullscreen={openFullscreen}/>} /> */}
-                <Route exact path='/' component={()=>Home(props)} />
-                <Route exact path='/pokeplay' render={()=><PokePlay/>}/>
+                <Route exact path='/' component={routeProps=><Home stuff={routeProps} openFullscreen={openFullscreen}/>} />
+                {/* <Route exact path='/' component={Home} openFullscreen={openFullscreen} /> */}
+                {/* <Route exact path='/pokeplay' render={()=><PokePlay/>}/> */}
+                <Route exact path='/play' render={()=><Play/>}/>
                 <Route exact path='/scoresheet' component={ScoreSheet} />                
-                <Route exact path='/scoresheet/detail/:round' component={ScoreDetail} />   <Route render={()=><h1>error not found</h1>} />
+                <Route exact path='/scoresheet/detail/:round' component={ScoreDetail} /> 
+                <Route render={()=><h1>error not found</h1>} />
             </Switch> 
           </Router>    
-        </div>      
+        </div>          
+      }
+      </>
     )
 }
 
 export default GameApp;
-{/* <p style={{width: '100%'}}>google anytics, audio effect, resume photo automatic slider, https://www.pinterest.com/pin/377950593698690280/</p> */}
-
