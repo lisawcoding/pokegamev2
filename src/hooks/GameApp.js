@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import {
     BrowserRouter as Router,
     Route,
@@ -7,7 +7,6 @@ import {
 
 import Navbar from './Navbar';
 import Home from './Home';
-// import PokePlay from './PokePlay';
 import ScoreSheet from './scoreSheet/ScoreSheet';
 import ScoreDetail from './scoreSheet/ScoreDetail';
 import BG from './BG';
@@ -20,18 +19,17 @@ function GameApp(props) {
     loading,
   } = useContext(InitValueContext)
 
-  console.log('function')
     function openFullscreen() {
-      const elem = document.querySelector("#root");
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.mozRequestFullScreen) { /* Firefox */
-        elem.mozRequestFullScreen();
-      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE/Edge */
-        elem.msRequestFullscreen();
-      }
+      // const elem = document.querySelector("#root");
+      // if (elem.requestFullscreen) {
+      //   elem.requestFullscreen();
+      // } else if (elem.mozRequestFullScreen) { /* Firefox */
+      //   elem.mozRequestFullScreen();
+      // } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      //   elem.webkitRequestFullscreen();
+      // } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      //   elem.msRequestFullscreen();
+      // }
     }
 
     return(
@@ -49,7 +47,6 @@ function GameApp(props) {
                 <Route exact path='/play' render={()=><Play/>}/>
                 <Route exact path='/scoresheet' component={ScoreSheet} />                
                 <Route exact path='/scoresheet/detail/:round' component={ScoreDetail} /> 
-                <Route render={()=><h1>error not found</h1>} />
             </Switch> 
           </Router>    
         </div>          

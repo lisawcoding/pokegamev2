@@ -12,10 +12,11 @@ function Play () {
     const { fighting } = useContext(TeamContext)
 
     return (
-        <div className="Play">
-            <div className='main-wrapper' >
-                {!fighting? <><SearchBar /><CardsDiv /> </>: <Fight />}
-            </div>
+        <div className="play-pannel">
+            {/* <div className='main-wrapper' > */}
+                {/* {!fighting? <><SearchBar /><CardsDiv /> </>: <Fight />} */}
+                {!fighting? <CardsDiv />: <Fight />}
+            {/* </div> */}
         </div>
     )
 }

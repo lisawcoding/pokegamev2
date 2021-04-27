@@ -1,39 +1,44 @@
 .hand-icon {
+
+  *{
+    color: var(--yellow);
+    -webkit-text-stroke: 1px var(--red);
+    // margin-left: 1em;
+    text-align: center;
+  }
+  img {
+    width: 5vw;
+  }
+
+}
+
+nav .hand-icon {
+  background: green;
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
   animation: pointUp .9s infinite linear;
-  *{
-    color: var(--yellow);
-    -webkit-text-stroke: 1px var(--red);
-    margin-left: 1em;
-    text-align: center;
-  }
-  img {
-    width: 90px;
-  }
 }
 
-.Play .play-zone .hand-icon {
+.team-zone .hand-icon {
   display: flex;
   align-items: center;
   z-index: 999;
   bottom: 0;
-  top: unset;
-  animation: pointDown .9s infinite linear;
+  height: 5vw;
+  display: flex;
+  align-items: center;
   img {
     transform: rotate(180deg);
+    animation: pointDown .9s infinite linear;
+    bottom: 0;
+    position: absolute;
+  }
+  h1 {
+    margin-left: 3.5em;
   }
 }
-  @keyframes pointUp {
-    0% {
-      top: 100%;
-    }
-    100% {
-      top: calc(100% + 1em);
-    }
-  }
 
   .SearchBar {
     .hand-icon {
@@ -42,11 +47,20 @@
     }
   }
 
-  @keyframes pointDown {
+  @keyframes pointUp {
     0% {
-      bottom: 10%;
+      top: calc(100% + 1vw)
     }
     100% {
-      bottom: 0%;
+      top: 100%;
+    }
+  }
+
+  @keyframes pointDown {
+    0% {
+      bottom: 1vw;
+    }
+    100% {
+      bottom: 0;
     }
   }

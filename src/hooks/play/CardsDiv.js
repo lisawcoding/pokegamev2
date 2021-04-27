@@ -30,7 +30,6 @@ function CardsDiv () {
         totalPokes,
         perPokes, setPerPokes,
         round, setRound,
-        
      } = useContext(InitValueContext)
 
      const [isFlipCard, setIsFlipCard] = useState({});
@@ -102,7 +101,7 @@ function CardsDiv () {
     }, [pokes])
 
     return (
-        <main  className='play-zone'>
+        <>
             <section className='team-zone'>
                 <TeamDiv 
                     title='dealerTeam'
@@ -111,13 +110,13 @@ function CardsDiv () {
                  /> 
             <div className="title-div">
                 <div className="icon-wrapper">
-                    {!isYourTerm ?  
+                    {!isYourTerm ? 
                         <div className="ball-div">
                             <img src={ball} alt="ball" />
-                            <h1 className='is-your-term'>{pokes.length>0 ? "wait..." : "cannot find pokes"}</h1>  
+                            <h1 className='is-your-term'>{pokes.length>0 ? "wait!" : "cannot find pokes"}</h1>  
                         </div>:(notSelectedArr.length>0 && <Hand remark="pick one" /> )
                     }   
-                </div>
+                </div>  
             </div>
                 <TeamDiv 
                     title='yourTeam'
@@ -125,7 +124,7 @@ function CardsDiv () {
                     isYourTerm={isYourTerm}
                 />  
             </section>
-                <section className="card-div-wrapper">
+                <section className="play-zone">
                     <div className={pokes.length> perPokes ? 'pokesDiv scroll-active' : 'pokesDiv' }>
                         { pokes.map((poke)=>{
                             return <Card
@@ -143,7 +142,7 @@ function CardsDiv () {
                     </div>
                     {isYourTerm==true && <Pagination/>}
                 </section>
-        </main>
+        </>
     )
 }
 

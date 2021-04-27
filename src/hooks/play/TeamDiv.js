@@ -12,10 +12,9 @@ function TeamDiv (props) {
                     props.teams.length>0 && 
                     <>
                        { props.teams.map(item=>
-                            <li key={uuid4()} className='img-wrapper'>
-                                {/* <p>{item.id}</p> */}
-                                <img src={item.src} alt={item.name}/>
-                            </li>                           
+                            // <li key={uuid4()} className='img-wrapper'>
+                                <img src={item.src} alt={item.name}  key={uuid4()}/>
+                            // </li>                           
                         )}
                     </>
                 }

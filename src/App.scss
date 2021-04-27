@@ -17,35 +17,47 @@ $blue: #3564AD;
   --lightbg: rgba(0, 0, 0, 0.1)
 }
 
-//   $red: #fe5350;
-//   $yellow: rgb(254, 202, 27);
-//   $black: #14171c;
-//   $lightbg: rgba(0, 0, 0, 0.1);
+  $red: #fe5350;
+  $yellow: rgb(254, 202, 27);
+  $black: #14171c;
+  $lightbg: rgba(0, 0, 0, 0.1);
 
-.GameApp {
+.bg, .GameApp {
+    // margin: 0 auto;
+    // box-sizing: border-box;
+    // border: 2px dotted hotpink;
+    // justify-content: center;
+    // box-sizing: border-box;
+    // margin: 0 auto;
+    // position: fixed;
+    // z-index: -1;
+    // width: 100%;
+    // height: 100%;
     margin: 0 auto;
-    box-sizing: border-box;
-    border: 2px dotted hotpink;
-    justify-content: center;
-    box-sizing: border-box;
-    margin: 0 auto;
-    position: fixed;
     z-index: -1;
     width: 100%;
+    min-height: 100vh;
     height: 100%;
-    // position: relative;
+}
+.GameApp {
+  box-sizing: border-box;
+  display: flex;
 }
 .bg {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // position: fixed;
+  // z-index: -1;
+  // width: 100%;
+  // height: 100%;
+  // top: 0;
+  // left: 0;
+  // background-attachment: fixed;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
   img {
     width: 50%;
     position: absolute;
