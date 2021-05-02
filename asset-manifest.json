@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pokegamev2/static/css/main.efdeedb0.chunk.css",
-    "main.js": "/pokegamev2/static/js/main.0747355c.chunk.js",
-    "main.js.map": "/pokegamev2/static/js/main.0747355c.chunk.js.map",
+    "main.css": "/pokegamev2/static/css/main.a6ae35ee.chunk.css",
+    "main.js": "/pokegamev2/static/js/main.8c074dfa.chunk.js",
+    "main.js.map": "/pokegamev2/static/js/main.8c074dfa.chunk.js.map",
     "runtime-main.js": "/pokegamev2/static/js/runtime-main.5714119a.js",
     "runtime-main.js.map": "/pokegamev2/static/js/runtime-main.5714119a.js.map",
     "static/js/2.a150608a.chunk.js": "/pokegamev2/static/js/2.a150608a.chunk.js",
     "static/js/2.a150608a.chunk.js.map": "/pokegamev2/static/js/2.a150608a.chunk.js.map",
     "index.html": "/pokegamev2/index.html",
-    "precache-manifest.dcae04f7388a63e5ff28b0b6335cba79.js": "/pokegamev2/precache-manifest.dcae04f7388a63e5ff28b0b6335cba79.js",
+    "precache-manifest.1adc72be8a49366d8e85755f2d21dcd2.js": "/pokegamev2/precache-manifest.1adc72be8a49366d8e85755f2d21dcd2.js",
     "service-worker.js": "/pokegamev2/service-worker.js",
-    "static/css/main.efdeedb0.chunk.css.map": "/pokegamev2/static/css/main.efdeedb0.chunk.css.map",
+    "static/css/main.a6ae35ee.chunk.css.map": "/pokegamev2/static/css/main.a6ae35ee.chunk.css.map",
     "static/js/2.a150608a.chunk.js.LICENSE.txt": "/pokegamev2/static/js/2.a150608a.chunk.js.LICENSE.txt",
     "static/media/ball.svg": "/pokegamev2/static/media/ball.302b2446.svg",
     "static/media/fullscreen.svg": "/pokegamev2/static/media/fullscreen.b35d1ac7.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.5714119a.js",
     "static/js/2.a150608a.chunk.js",
-    "static/css/main.efdeedb0.chunk.css",
-    "static/js/main.0747355c.chunk.js"
+    "static/css/main.a6ae35ee.chunk.css",
+    "static/js/main.8c074dfa.chunk.js"
   ]
 }
