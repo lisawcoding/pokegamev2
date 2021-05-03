@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/pokegamev2/static/css/main.d892cae4.chunk.css",
-    "main.js": "/pokegamev2/static/js/main.9fcd78bb.chunk.js",
-    "main.js.map": "/pokegamev2/static/js/main.9fcd78bb.chunk.js.map",
+    "main.js": "/pokegamev2/static/js/main.60bf83df.chunk.js",
+    "main.js.map": "/pokegamev2/static/js/main.60bf83df.chunk.js.map",
     "runtime-main.js": "/pokegamev2/static/js/runtime-main.5714119a.js",
     "runtime-main.js.map": "/pokegamev2/static/js/runtime-main.5714119a.js.map",
     "static/js/2.a150608a.chunk.js": "/pokegamev2/static/js/2.a150608a.chunk.js",
     "static/js/2.a150608a.chunk.js.map": "/pokegamev2/static/js/2.a150608a.chunk.js.map",
     "index.html": "/pokegamev2/index.html",
-    "precache-manifest.fa1949f4b221d339786a81379be7d04e.js": "/pokegamev2/precache-manifest.fa1949f4b221d339786a81379be7d04e.js",
+    "precache-manifest.ddc2e99f50ebeecfeec35aee83d19e08.js": "/pokegamev2/precache-manifest.ddc2e99f50ebeecfeec35aee83d19e08.js",
     "service-worker.js": "/pokegamev2/service-worker.js",
     "static/css/main.d892cae4.chunk.css.map": "/pokegamev2/static/css/main.d892cae4.chunk.css.map",
     "static/js/2.a150608a.chunk.js.LICENSE.txt": "/pokegamev2/static/js/2.a150608a.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.5714119a.js",
     "static/js/2.a150608a.chunk.js",
     "static/css/main.d892cae4.chunk.css",
-    "static/js/main.9fcd78bb.chunk.js"
+    "static/js/main.60bf83df.chunk.js"
   ]
 }
