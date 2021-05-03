@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/pokegamev2/static/css/main.d892cae4.chunk.css",
-    "main.js": "/pokegamev2/static/js/main.20be855a.chunk.js",
-    "main.js.map": "/pokegamev2/static/js/main.20be855a.chunk.js.map",
+    "main.css": "/pokegamev2/static/css/main.442ed7fb.chunk.css",
+    "main.js": "/pokegamev2/static/js/main.f4237009.chunk.js",
+    "main.js.map": "/pokegamev2/static/js/main.f4237009.chunk.js.map",
     "runtime-main.js": "/pokegamev2/static/js/runtime-main.5714119a.js",
     "runtime-main.js.map": "/pokegamev2/static/js/runtime-main.5714119a.js.map",
-    "static/js/2.37b3c925.chunk.js": "/pokegamev2/static/js/2.37b3c925.chunk.js",
-    "static/js/2.37b3c925.chunk.js.map": "/pokegamev2/static/js/2.37b3c925.chunk.js.map",
+    "static/js/2.bd6c199d.chunk.js": "/pokegamev2/static/js/2.bd6c199d.chunk.js",
+    "static/js/2.bd6c199d.chunk.js.map": "/pokegamev2/static/js/2.bd6c199d.chunk.js.map",
     "index.html": "/pokegamev2/index.html",
-    "precache-manifest.8024987e5f90ccefedc1cbfa3715e6fc.js": "/pokegamev2/precache-manifest.8024987e5f90ccefedc1cbfa3715e6fc.js",
+    "precache-manifest.bd2155f9ad2b113439e88756348757b9.js": "/pokegamev2/precache-manifest.bd2155f9ad2b113439e88756348757b9.js",
     "service-worker.js": "/pokegamev2/service-worker.js",
-    "static/css/main.d892cae4.chunk.css.map": "/pokegamev2/static/css/main.d892cae4.chunk.css.map",
-    "static/js/2.37b3c925.chunk.js.LICENSE.txt": "/pokegamev2/static/js/2.37b3c925.chunk.js.LICENSE.txt",
+    "static/css/main.442ed7fb.chunk.css.map": "/pokegamev2/static/css/main.442ed7fb.chunk.css.map",
+    "static/js/2.bd6c199d.chunk.js.LICENSE.txt": "/pokegamev2/static/js/2.bd6c199d.chunk.js.LICENSE.txt",
     "static/media/ball.svg": "/pokegamev2/static/media/ball.302b2446.svg",
     "static/media/fullscreen.svg": "/pokegamev2/static/media/fullscreen.b35d1ac7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5714119a.js",
-    "static/js/2.37b3c925.chunk.js",
-    "static/css/main.d892cae4.chunk.css",
-    "static/js/main.20be855a.chunk.js"
+    "static/js/2.bd6c199d.chunk.js",
+    "static/css/main.442ed7fb.chunk.css",
+    "static/js/main.f4237009.chunk.js"
   ]
 }
