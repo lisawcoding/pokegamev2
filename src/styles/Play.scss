@@ -1,5 +1,3 @@
-$tablet-width: 768px;
-$desktop-width: 1024px;
 
 // .Play {
 //   position: absolute;
@@ -84,37 +82,6 @@ $desktop-width: 1024px;
   color: white;
   transform: rotateY(180deg);
 }
-.play-pannel {
-  display: flex;
-  flex-direction: column;
-  /* color: grey; */
-  /* justify-content: space-around; */
-  margin: 0 auto;
-  position: relative;
-  width: 100vh;
-  /* flex-wrap: wrap; */
-  align-items: center;
-  justify-content: center;
-  .top-div {
-    align-items: center;
-    display: flex;
-    height: 7em;
-    margin: 0 auto;
-    justify-content: space-between;
-    height: 6em;
-    width: 92vh;
-    min-width: 720px;
-  }
-  img {
-    width: 5vw;
-  }
-}
-
-.main-wrapper {
-  width: 100vh;
-  margin: 0 auto;
-}
-
 
 .img-wrapper {
   width: 100%;
@@ -188,7 +155,7 @@ svg {
   background: transparentize($color: #000000, $amount: 0);
   .teamDiv {
     justify-content: center;
-    height: 50%;
+    // height: 50%;
     *{
       color: var(--black)
       color： #fff;
@@ -241,6 +208,7 @@ svg {
 }
 
 .yourTeam {
+
   img{
     animation: bg-red .9s infinite ease-in-out;
   }
@@ -323,27 +291,19 @@ svg {
     }
   }
 
-  @media (min-width: #{$tablet-width}) {
-    //   .pagination {
-    //     top: 50%;
-    //     transform: translateY(-50%);
-    //     height: 100%;
-    //     position: fixed;
-    //     left: 0;
-    //     z-index: -1;
-    //     // z-index: 999;
-    //     button {
-    //       transform: scale(1.5) translateY(-50%);
-    //     }
-    //     .prev {
-    //       left: 1em;
-    //     }
-    //     .next {
-    //       left: unset;
-    //       right: 1em
-    //     }
-    // }
-    // .title-div {
-    //   display: none !important; 
-    // }
+
+  .play-pannel {
+    .top-div {
+      justify-content: space-between;
+      position: relative;
+      align-items: flex-end;
+    }
+    .play-zone { 
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        height: 75%;
+    } 
   }
+
+

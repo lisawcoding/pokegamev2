@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import {
-    BrowserRouter as Router,
+    // BrowserRouter as Router,
     NavLink,
     withRouter
 } from "react-router-dom";
@@ -10,6 +10,8 @@ import fullscreen from '../images/fullscreen.svg'
 import home from '../images/home.png'
 import play from '../images/play.png'
 import score from '../images/score.png'
+
+import SearchBar from '../hooks/play/SearchBar'
 
 import '../styles/Navbar.scss';
 import { TeamContext } from '../contexts/TeamContext';
@@ -50,14 +52,14 @@ function Navbar (props){
 
     return (
         <>
-        { props.location.pathname!=='/' && (selectedIDs.length<1 | winner.length>0) &&
+        { (props.location.pathname!=='/' || props.location.pathname.indexOf("poke")!==-1) && (selectedIDs.length<1 | winner.length>0) &&
             <nav id='nav'>
                 <div></div>
-                <ul ref={props.fullscreenModal}>
-                    <button className='btn btn-animate tooltip fullscreenBtn' onClick={props.openFullscreen} >
+                <ul ref={props.fullscreenModals}>
+                    {/* <button className='btn btn-animate tooltip fullscreenBtn' onClick={props.openFullscreen} >
                         <img src={fullscreen} alt="full screen" />
                         <span className="tooltiptext">full screen</span>
-                    </button>
+                    </button> */}
                         <li>
                             <NavLink exact className='btn btn-white btn-animate tooltip' activeClassName='active-link' to='/'>
                                 <img src={home} alt="home-icon" /><span className="tooltiptext">home</span>
@@ -65,6 +67,7 @@ function Navbar (props){
                             <NavLink exact className='btn btn-white btn-animate tooltip play-btn' activeClassName='active-link' to='/play' onClick={replay}>
                                 <img src={play} alt="play-icon" />
                                 { winner === "" ? <span className="tooltiptext">play game</span> : <Hand remark="play again" />}
+                                {/* <span className="tooltiptext">play game</span> : <Hand remark="play again" /> */}
                                 </NavLink>
                             <NavLink exact className='btn btn-white btn-animate tooltip scorelink' activeClassName='active-link' to='/scoresheet'>
                                 <img src={score} alt="score-icon"/><span className="tooltiptext">score sheet</span>
@@ -72,7 +75,7 @@ function Navbar (props){
                         </li>
                 </ul>  
             </nav>         
-        }
+        } 
         </>
     )
 }

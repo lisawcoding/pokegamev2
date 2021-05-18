@@ -6,9 +6,8 @@ nav {
   z-index: 9;
   width: 100%;
     ul {
-    display: flex;
-    justify-content: flex-end;
-    z-index: 99;
+      display: flex;
+      z-index: 99;
       a, button {
       list-style: none;
       font-size: 1.2em;
@@ -23,6 +22,10 @@ nav {
     .btn {
       position: relative;
       padding: .5em;
+      img {
+        width: 5vw;
+
+      }
       &:link,
       &visited {
         text-transform: uppercase;
@@ -61,7 +64,7 @@ nav {
     visibility: visible;
     z-index: 999;
   }
-s
+
   /* classList^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
   .active-link {
     background: var(--red)

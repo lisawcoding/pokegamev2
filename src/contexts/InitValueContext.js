@@ -4,7 +4,7 @@ export const InitValueContext = createContext();
 
 export function InitValueProvider (props) {
     const [loading, setLoading] = useState(true);
-    const [totalPokes] = useState(20);
+    const [totalPokes] = useState(200);
     const [perPokes, setPerPokes] = useState(12);
     const [apiUrl] = useState('https://pokeapi.co/api/v2/pokemon?offset=0&limit=')
     const [round, setRound] = useState(3)

@@ -1,19 +1,19 @@
 .hand-icon {
-
   *{
     color: var(--yellow);
     -webkit-text-stroke: 1px var(--red);
     // margin-left: 1em;
     text-align: center;
   }
-  img {
-    width: 5vw;
+  h1 {
+    font-size: 90%;
   }
-
+  img {
+    width: 25%;
+  }
 }
 
 nav .hand-icon {
-  background: green;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -23,33 +23,55 @@ nav .hand-icon {
 
 .team-zone .hand-icon {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  z-index: 999;
+  position: absolute;
+  z-index: 99999;
   bottom: 0;
-  height: 5vw;
-  display: flex;
-  align-items: center;
+  animation: pointDown .9s infinite linear;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column-reverse;
+  animation: pointDown .9s infinite linear;
   img {
     transform: rotate(180deg);
-    animation: pointDown .9s infinite linear;
-    bottom: 0;
-    position: absolute;
-  }
-  h1 {
-    margin-left: 3.5em;
   }
 }
 
-  .SearchBar {
-    .hand-icon {
-      text-align: center;
-      animation: pointUp .9s infinite linear;
-    }
+.ball-div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  height: 100%;
+  h1 {
+    color: var(--yellow);
+    font-size: 90%;
   }
+  img {
+    width: 25%;
+  }
+}
+
+.SearchBar-div{
+  display: flex;
+  align-items: center;
+  .hand-icon{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    animation: pointLeft .9s infinite linear;
+    // left: 5em;
+    img {
+      transform: rotate(270deg);
+      width: 3.5vw;
+      margin-right: 1.5vh;
+    }
+  }      
+}
 
   @keyframes pointUp {
     0% {
-      top: calc(100% + 1vw)
+      top: calc(100% + .5vw)
     }
     100% {
       top: 100%;
@@ -58,9 +80,41 @@ nav .hand-icon {
 
   @keyframes pointDown {
     0% {
-      bottom: 1vw;
+      bottom: 5%;
     }
     100% {
       bottom: 0;
     }
+  }
+
+  // @keyframes pointLeft {
+  //   0% {
+  //     left: calc(5vw + 1.5vw + .5vw)
+  //   }
+  //   100% {
+  //     left: calc(5vw + 1.5vw);
+  //   }
+  // }
+
+  @media (min-width: 900px){
+
+    .hand-icon {
+      img {
+        width: 9vh !important;
+      }
+      h1 {
+        font-size: 3.5vh;
+      }
+    }
+    .top-div {
+      .title-div{
+        img {
+          width: 9vh;
+        }
+        h1 {
+          font-size: 3.5vh;
+        }
+      } 
+    }
+
   }

@@ -6,20 +6,28 @@
     background: #000;
     justify-content: space-around;
     width: 100%;
+    padding: 9vh 0;
+    overflow: hidden;
     // top: 50%;
     // transform: translateY(-50%);
     // background-color: peachpuff;
-    .team {
-        // display: flex;
+    .Team-Wrapper {
         width: 100%;
-        // flex-grow: 1;
-        // display: revert;
-        // align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &.yourTeam {
+            flex-direction: column-reverse;
+        }
+    }
+    h1 {
+        font-size: 2.2vw;
     }
     .img-wrapper {
         // padding-top: unset;
         img {
-            width: 150%;
+            width: 112%;
+            height: 112%;
         }
     }
     .TeamDiv {
@@ -39,11 +47,10 @@
     }
 }
 
-
-
-
 .yourTeam {
     color: var(--red);
+    display: flex;
+    flex-direction: row-reverse;
     // * {
     //     color: var(--red)
     // }
@@ -52,6 +59,10 @@
         width: 0;
         transition: 5s;
         float: right;
+    }
+    .each-poke {
+        // display: flex;
+        // flex-direction: column-reverse;
     }
 } 
 
@@ -72,6 +83,10 @@
     // font-size: 200%;
     span {
         color: grey;
+        font-size: 2.2vw;
+    }
+    h1 {
+        font-size: 5vw;
     }
 }
 
@@ -79,12 +94,19 @@
     // -webkit-text-stroke: 1px var(--red);
     animation: text .9s infinite ease-in-out;
     text-transform: uppercase;
+    font-size: 5vw !important;
 }
   
 .each-poke {
     // border: 1px solid violet;
     display: flex;
-    
+    padding: .5vw;
+    // border: 2px dotted hotpink;
+}
+
+.ProgessBar {
+    width: 95%;
+    margin: 0 auto;
 }
 
 .overlay {
@@ -118,21 +140,39 @@
 // }
 
 
-.replayBtn {
-    background: #fe5350;
-    background: var(--red);
-    border-radius: 50%;
-    width: 6vw;
-    height: 6vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.team {
-    text-align: center;
-    &.dealer {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-}
+// .replayBtn {
+//     background: #fe5350;
+//     background: var(--red);
+//     border-radius: 50%;
+//     width: 6vw;
+//     height: 6vw;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     cursor: pointer;
+// }
+// .team {
+//     text-align: center;
+//     &.dealer {
+//         display: flex;
+//         flex-direction: column-reverse;
+//     }
+// }
+
+// .teamDiv {
+//     display: flex;
+//     flex-wrap: wrap;
+//     text-align: center;
+//     justify-content: center;
+//     background-color: green;
+//   }
+//   .teamDiv img {
+//     width: 60px;
+//   }
+//   .teamDiv .startBtn {
+//     margin: 0 1rem 0 0;
+//   }
+//   .teamDiv h2, .teamDiv p {
+//     width: 100%;
+//     text-align: center;
+//   }

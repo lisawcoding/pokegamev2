@@ -10,17 +10,13 @@ function ScoreSheet(){
 
     return(
            <div className='ScoreSheet'>
-                    <h1>Pokemon Game</h1>
-                    <h2>Score Sheet</h2>
                     <section className='table'>
                         <ul className='top-div'>
-                            <li className='title'></li>
-                            <li className='title'></li>
+                            <li>date</li>
+                            <li>round</li>
                             <li className='score'>score</li>
                             <li className='win-lose'>win lose</li>
                             <li className='detail'>detail</li>
-                            <li>date</li>
-                            <li>round</li>
                             <li>you</li>
                             <li>dealer</li>
                         </ul>

@@ -4,12 +4,12 @@ import rotate from "../images/rotate.png"
 
 function BG(props) {
     const bgUrl=()=>{
-        if(props.location.pathname==='/') {
-            return 'https://cdn.pixabay.com/photo/2020/04/23/20/13/space-5083905_960_720.jpg';
-        } else if (props.location.pathname.indexOf('play')!==-1){
+        if(props.location.pathname.indexOf('score')>0) {
+            return 'https://cdn.pixabay.com/photo/2016/09/08/15/18/textured-1654610__340.jpg';
+        } else if (props.location.pathname.indexOf('play')>0){
             return 'https://cdn.pixabay.com/photo/2017/06/02/10/28/cartoons-2365895__340.jpg';
         } else {
-            return 'https://cdn.pixabay.com/photo/2016/09/08/15/18/textured-1654610__340.jpg'
+            return 'https://cdn.pixabay.com/photo/2020/04/23/20/13/space-5083905_960_720.jpg'
         }
     }
 
@@ -24,3 +24,5 @@ function BG(props) {
 }
 
 export default withRouter(BG);
+
+

@@ -13,7 +13,7 @@ import { InitValueContext } from '../../contexts/InitValueContext';
 import '../../styles/CardsDiv.scss';
 import ball from "../../images/ball.svg"
 
-function CardsDiv () {
+function CardsDiv (props) {
     const {
         pokes, setPokes, 
         search, setSearch, 
@@ -102,21 +102,21 @@ function CardsDiv () {
 
     return (
         <>
-            <section className='team-zone'>
+            <section className='team-zone top-div' style={{height: props.vh*.2}}>
                 <TeamDiv 
                     title='dealerTeam'
                     teams={teams.dealerTeam}
                     isYourTerm={isYourTerm}
                  /> 
             <div className="title-div">
-                <div className="icon-wrapper">
+                {/* <div className="icon-wrapper"> */}
                     {!isYourTerm ? 
                         <div className="ball-div">
                             <img src={ball} alt="ball" />
                             <h1 className='is-your-term'>{pokes.length>0 ? "wait!" : "cannot find pokes"}</h1>  
                         </div>:(notSelectedArr.length>0 && <Hand remark="pick one" /> )
                     }   
-                </div>  
+                {/* </div>   */}
             </div>
                 <TeamDiv 
                     title='yourTeam'

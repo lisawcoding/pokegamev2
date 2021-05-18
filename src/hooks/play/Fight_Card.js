@@ -8,12 +8,10 @@ import ProgressBar from './ProgressBar';
 function TeamDiv (props) {
 
     return(
-        <>
+        <div className={`Team-Wrapper ${props.title}`}>
         {/* <h1 style={{color: 'tomato'}}>{props.title}</h1> */}
             
-            {
-                props.winner!=="" && <h1>{props.title.replace("Team", " hand")}: {props.totalExp}</h1>
-            }
+            { props.winner!=="" && <h1>{props.title.replace("Team", " hand")}: {props.totalExp}</h1> }
             
             <div className={ `TeamDiv ${props.title}`} style={{flexDirection: props.title==='yourTeam'? 'row-reverse' : ''}}>
                 
@@ -22,26 +20,22 @@ function TeamDiv (props) {
                     <>
                        { props.teams.map(item=>
                         <li key={uuid4()} className="each-poke">
-                            {/* <p>{item.id}</p> */}
                             <div className='img-wrapper'>
-                                {/* <p>{item.id}</p> */}
                                 <img src={item.src_shiny} alt={item.name}  className={props.winner!=="" ? "notransition" : ""} />
+                                <div className='ProgessBar'>
+                                    <ProgressBar 
+                                        exp={item.exp} 
+                                        />
+                                </div>                               
                             </div>
-                            <div className='ProgessBar'>
-                                {/* <p>{props.exp}</p> */}
-                                <ProgressBar 
-                                    exp={item.exp} 
-                                    // item={item}
-                                    // title={props.title}
-                                    />
-                            </div>                    
+                 
                         </li>
                           
                         )}
                     </>
                 }
             </div>        
-        </>
+        </div>
     )
 }
 

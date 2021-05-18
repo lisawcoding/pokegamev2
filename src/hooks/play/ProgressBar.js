@@ -4,13 +4,13 @@ import {TeamContext} from '../../contexts/TeamContext'
 
 const ProgressBar = (props) => {
   const {
-    isWinner, setIsWinner, 
+    winner
  } = useContext(TeamContext);
 
   const [width, setWidth]=useState(0)
 
   const containerStyles = {
-    height: 20,
+    height: "2.7vw",
     width: '100%',
     backgroundColor: "grey",
     borderRadius: 50,
@@ -22,17 +22,16 @@ const ProgressBar = (props) => {
     transition: 'all 1.2s',
     width: width,
     display: "flex",
+    alignItems: "center"
   }
 
   const labelStyles = {
-    padding: 5,
-    fontSize: "12px",
+    fontSize: "1vw",
     color: 'white',
-    // fontWeight: 'bold'
   }
 
   useEffect(()=>{
-    // if(isWinner!==null) return
+    if(winner==="")  return
     setWidth(`calc(${props.exp/2.9}%)`)
   }, [])
 
@@ -40,7 +39,7 @@ const ProgressBar = (props) => {
     <div className='ProgessBar'>
       <div style={containerStyles}>
         <div style={fillerStyles} className='filterStyle'>
-          <span style={labelStyles}>{props.exp}</span>
+          {winner!=="" && <span style={labelStyles}>{props.exp}</span>}
         </div>
       </div>
     </div>

@@ -3,12 +3,8 @@ import React, {useContext, useEffect, useState} from 'react';
 // import TeamDiv from './TeamDiv';
 import Fight_Card from './Fight_Card';
 import Score_Div from './Score_Div';
-
-// import { PokeListContext } from '../../contexts/PokelistContext';
 import { TeamContext } from '../../contexts/TeamContext';
-// import { InitValueContext } from '../../contexts/InitValueContext';
 import '../../styles/Fight.scss'
-// import ProgressBar from './ProgressBar';
 import { ScoreContext } from '../../contexts/ScoreContext';
 
 function Fight () {
@@ -33,7 +29,7 @@ function Fight () {
             yourScore: yourTotalExp,
             dealerScore: dealerTotalExp,
             win: winner,
-            date: new Date().toDateString(),
+            date: new Date().toLocaleString("it-It").replace(",", ""),
             teams: teams,
             check: 'check'
         }])
@@ -43,31 +39,25 @@ function Fight () {
     return(
         <>
             <section className='Fight'>
-                <div className='team'>
-                    <Fight_Card 
-                        title='yourTeam'
-                        teams={teams.yourTeam}
-                        winner={winner}
-                        totalExp={yourTotalExp}
-                    />                      
-                </div>
-
+                <Fight_Card 
+                    title='yourTeam'
+                    teams={teams.yourTeam}
+                    winner={winner}
+                    totalExp={yourTotalExp}
+                />               
                 <Score_Div
                     yourArr={yourArr}
                     dealerArr={dealerArr}
                     yourTotalExp={yourTotalExp}
                     dealerTotalExp={dealerTotalExp}
                 />                   
-                <div className={ winner!==""? "overlay" : ""}></div>
-                
-                <div className='team dealer'>
-                    <Fight_Card 
-                        title='dealerTeam'
-                        teams={teams.dealerTeam}
-                        winner={winner}
-                        totalExp={dealerTotalExp}
-                    />              
-                </div>
+                {/* <div className={ winner!==""? "overlay" : ""}></div> */}
+                <Fight_Card 
+                    title='dealerTeam'
+                    teams={teams.dealerTeam}
+                    winner={winner}
+                    totalExp={dealerTotalExp}
+                />              
             </section>
         </>
     )

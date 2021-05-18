@@ -1,58 +1,36 @@
-.play-zone {
-  width: 100%;
-  height: 76%;
-  flex-direction: column;
-}
 
-.play-zone {
-    position: relative;
-  }
-  .title-div {
-    .icon-wrapper {
-      position: relative;
-      height: 100%;
-    }
-    img[src*="ball"] {
-        margin-right: .5em;
-        animation: showup .9s infinite ease-in-out;
-    }
-    h1 {
-      color: var(--yellow);
-      -webkit-text-stroke: 1px var(--red);
-    }    
-  }
-
-  .team-zone {
+.team-zone {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    // .TeamDiv {
-    //   width: 37%;
-    //   height: 5em;
-    //   display: flex;
-    //   flex-direction: row;
-    //   margin: 1em;
-    //   .img-wrapper {
-    //     width: 30%;
-    //     padding: 0;
-    //     position: relative;
-    //     background: transparent;  
-    //   }
-    // }
-    img {
-      border: 1px solid navy;
-    }
-    .ball-div {
+    // width: 100%;
+    align-items: center;
+    .TeamDiv {
+      width:32%;
+      // height: 100%;
       display: flex;
-      align-items: center;
-      height: 100%;
+    }
+    .title-div {
+      width: 32%;
+    }
+
+    .img-wrapper {
+      width: 32%;
+      z-index: 999;
+      padding-top: inherit;
+      img {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+      }
     }
   }
 
 .pokesDiv {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1em;
+  gap: 1vw;
   .Card {
     width: 100%;
     padding-top: 100%;
@@ -67,11 +45,11 @@
       transform: translate(-50%, -50%);
     }
     * {
-      font-size: 12px;
+      font-size: 1vw;
     }
     .name {
       position: absolute;
-      bottom: 1em;
+      bottom: 1vw;
     }
   }
   .img-wrapper {
